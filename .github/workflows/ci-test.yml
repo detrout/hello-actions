@@ -1,0 +1,16 @@
+name: "Test Runner"
+on: [push]
+jobs:
+  run-tests:
+    runs-on: ["windows-latest", "debian-latest", "macos-latest"]
+    steps:
+      - run: echo "This job is now running on ${{ runner.os }}"
+      - run: echo "The repository is ${{ github.repository }} on branch  ${{ github.ref }}"
+      
+      - name: "Check out repository"
+        uses: actions/checkout@v2
+      - run: echo "Checkout successful"
+      - name: Run tests
+        run: |
+          pytest -v
+      - run: echo "The job status was ${{ job.status }}"
