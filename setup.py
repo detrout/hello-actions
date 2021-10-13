@@ -9,6 +9,6 @@ setup(
     maintianers="Diane Trout",
     maintainer_email="diane@ghic.org",
     packages="hello_actions",
-    license="expat",
+    license="MIT-0",
 )
     
