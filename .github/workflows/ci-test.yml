@@ -2,7 +2,7 @@ name: "Test Runner"
 on: [push]
 jobs:
   run-tests:
-    runs-on: ["windows-latest", "debian-latest", "macos-latest"]
+    runs-on: ["windows-latest", "ubuntu-latest", "macos-latest"]
     steps:
       - run: echo "This job is now running on ${{ runner.os }}"
       - run: echo "The repository is ${{ github.repository }} on branch  ${{ github.ref }}"
