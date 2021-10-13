@@ -13,5 +13,6 @@ jobs:
       - name: Run tests
         run: |
           python --version
-          pytest -v
+          python3 --version
+          python3 setup.py test -v
       - run: echo "The job status was ${{ job.status }}"
