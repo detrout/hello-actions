@@ -1,0 +1,25 @@
+name: "Build Documentation"
+on:
+  push:
+    paths:
+      - "docs"
+jobs:
+  build-docs:
+    runs-on: "ubuntu-latest"
+    steps:
+      - run: echo "This job is now running on ${{ runner.os }}"
+      - run: echo "The repository is ${{ github.repository }} on branch  ${{ github.ref }}"
+      - name: "Check out repository"
+        uses: actions/checkout@v2
+      - run: echo "Checkout successful"
+      - name: Run tests
+        run: |
+          pip install sphinx
+          cd docs ; make
+      - name: Archive sphinx documentation
+        uses: actions/upload-artifact@v2
+        with:
+          name: documentation
+          path: |
+            docs/build
+      - run: echo "The job status was ${{ job.status }}"
