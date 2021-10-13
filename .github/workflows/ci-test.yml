@@ -12,5 +12,6 @@ jobs:
       - run: echo "Checkout successful"
       - name: Run tests
         run: |
+          python --version
           pytest -v
       - run: echo "The job status was ${{ job.status }}"
