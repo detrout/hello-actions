@@ -10,4 +10,4 @@ class TestCommon(TestCase):
         self.assertEqual(common.batman(), "NaNaNaNa")
 
     def test_discontinuity(self):
-        self.assertEqual(common.discontinuity(4), 0)
+        self.assertRaises(ZeroDivisionError, common.discontinuity, 4)
