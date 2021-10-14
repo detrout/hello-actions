@@ -5,6 +5,8 @@ on:
       - "hello_actions"
       - "pyproject.toml"
       - "setup.cfg"
+      - ".github/workflows/ci-test.yml"
+
 jobs:
   run-tests:
     runs-on: "ubuntu-latest"
